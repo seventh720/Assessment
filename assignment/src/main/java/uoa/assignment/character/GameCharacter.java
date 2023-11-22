@@ -4,13 +4,13 @@ public abstract class GameCharacter {
     
 	private String name ="";
 	
-	private int health = 1001; 
+	private int health = 100; 
 	
 	public int row;
 	public int column;
 	
 	
-	public GameCharacter (String name) {
+	public GameCharacter (String name, int row, int column) {
 		this.name = name;
         this.row = row;
         this.column = column;
@@ -32,5 +32,6 @@ public abstract class GameCharacter {
 	public void setHealth(int health) {
 		this.health = health;
 	}
+
 }
 
