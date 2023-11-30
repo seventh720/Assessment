@@ -10,10 +10,8 @@ public abstract class GameCharacter {
 	public int column;
 	
 	
-	public GameCharacter (String name, int row, int column) {
+	public GameCharacter (String name) {
 		this.name = name;
-        this.row = row;
-        this.column = column;
 	}
 	
 	public abstract void hurtCharacter (GameCharacter character);
@@ -22,7 +20,7 @@ public abstract class GameCharacter {
 	
 	
 	public String sayName() {
-	    return ""; 
+        return name;
 	}
 
 	public int getHealth() {
@@ -30,8 +28,8 @@ public abstract class GameCharacter {
 	}
 
 	public void setHealth(int health) {
-		this.health = health;
+		this.health =health;
 	}
-
 }
+
 
