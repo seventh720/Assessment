@@ -8,16 +8,24 @@ public class Player extends GameCharacter{
 		super(name);
 	}
 
-	
-	public
-	void hurtCharacter(GameCharacter character) {
-		
-	}
+    @Override
+    public void hurtCharacter(GameCharacter character) {
+        // Remove 50 health points if the monster did not defend successfully
+        if (!character.successfulDefense()) {
+            int currentHealth = character.getHealth();
+            character.setHealth(currentHealth - 50);
+        }
+    }
 
-	
-	public
-	boolean successfulDefense() {
-		return true;
-	}
+    @Override
+    public boolean successfulDefense() {
+        // Randomly decide whether the monster can defend successfully with a 30% chance of successful defense
+        Random random = new Random();
+        return random.nextDouble() <= 0.3;
+    }
 
+    
+    public String decideMove() {
+        return "move";
+    }
 }
