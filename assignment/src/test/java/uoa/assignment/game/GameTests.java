@@ -122,7 +122,7 @@ public class GameTests
      * Task 2.3 
      */
    
-    /*@Test
+    @Test
     public void checkPlayerAndMonsterPosition()
     {
        try {
@@ -144,13 +144,13 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right with initialising players and monsters.  Check Task 2.4" + ANSI_RESET + e);
     }
-    }*/
+    }
    
     /**
      * Task 2.4 
      */
    
-    /*@Test
+    @Test
     public void checkPlayerAndMonsterPositionInLayout()
     {
        try {
@@ -189,14 +189,14 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 2.5" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     
   /**
      * Task 3.1 
      */
    
-    /*@Test
+    @Test
     public void checkRunGameMain() throws InterruptedException 
     {
        try {
@@ -237,13 +237,13 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.1" + ANSI_RESET + e);
     }
-    }*/
+    }
     
  /**
      * Task 3.2 
      */
    
-    /*@Test
+    @Test
     public void checkRunGameMainWithUserInput() throws InterruptedException 
     {
        try {
@@ -289,14 +289,14 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.2" + ANSI_RESET + e);
     }
-    }*/
+    }
     
   
     
      /**
      * Task 3.3
      */
-    /*@Test
+    @Test
     public void checkMoveCharacter()
     {
           class TestImplementation extends GameCharacter {
@@ -322,7 +322,7 @@ public class GameTests
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. moveCharacter method must print exactly this sentence when the use rinput is incorrect: 'Use only keywords up, down, left, right' Check Task 3.3"+ ANSI_RESET+ e);
     }
       
-    }*/
+    }
     
     /**
      * Task 3.4 
