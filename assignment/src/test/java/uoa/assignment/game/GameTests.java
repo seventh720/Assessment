@@ -327,7 +327,7 @@ public class GameTests
     /**
      * Task 3.4 
      */
-    /*@Test
+    @Test
     public void checkMoveCharacterFull()
     {
           try {
@@ -400,7 +400,7 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.4" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     /**
      * Task 4.1 

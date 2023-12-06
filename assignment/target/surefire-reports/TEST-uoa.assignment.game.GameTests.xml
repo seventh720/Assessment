@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uoa.assignment.game.GameTests" time="2.052" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uoa.assignment.game.GameTests" time="2.052" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/codio/workspace/assignment/target/surefire/surefirebooter8102603016746283069.jar /home/codio/workspace/assignment/target/surefire 2023-12-06T14-29-30_939-jvmRun1 surefire4176281383024144948tmp surefire_04097282498469987063tmp"/>
+    <property name="sun.java.command" value="/home/codio/workspace/assignment/target/surefire/surefirebooter3221976174141686555.jar /home/codio/workspace/assignment/target/surefire 2023-12-06T15-51-06_645-jvmRun1 surefire482802933126629255tmp surefire_014055757816914762697tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/codio/workspace/assignment/target/test-classes:/home/codio/workspace/assignment/target/classes:/home/codio/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/codio/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/codio/workspace/assignment/target/surefire/surefirebooter8102603016746283069.jar"/>
+    <property name="surefire.real.class.path" value="/home/codio/workspace/assignment/target/surefire/surefirebooter3221976174141686555.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.13+8-Ubuntu-0ubuntu1.18.04"/>
     <property name="user.name" value="codio"/>
@@ -56,11 +56,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkCharactersArray" classname="uoa.assignment.game.GameTests" time="0.003"/>
-  <testcase name="checkPlayerAndMonsterPositionInLayout" classname="uoa.assignment.game.GameTests" time="0.001"/>
-  <testcase name="checkLayoutInitialization" classname="uoa.assignment.game.GameTests" time="0.002"/>
-  <testcase name="checkMoveCharacter" classname="uoa.assignment.game.GameTests" time="0.007"/>
-  <testcase name="checkRunGameMain" classname="uoa.assignment.game.GameTests" time="1.001"/>
-  <testcase name="checkPlayerAndMonsterPosition" classname="uoa.assignment.game.GameTests" time="0"/>
+  <testcase name="checkMoveCharacterFull" classname="uoa.assignment.game.GameTests" time="0.004"/>
+  <testcase name="checkCharactersArray" classname="uoa.assignment.game.GameTests" time="0"/>
+  <testcase name="checkPlayerAndMonsterPositionInLayout" classname="uoa.assignment.game.GameTests" time="0.004"/>
+  <testcase name="checkLayoutInitialization" classname="uoa.assignment.game.GameTests" time="0"/>
+  <testcase name="checkMoveCharacter" classname="uoa.assignment.game.GameTests" time="0.006"/>
+  <testcase name="checkRunGameMain" classname="uoa.assignment.game.GameTests" time="1"/>
+  <testcase name="checkPlayerAndMonsterPosition" classname="uoa.assignment.game.GameTests" time="0.003"/>
   <testcase name="checkRunGameMainWithUserInput" classname="uoa.assignment.game.GameTests" time="1.001"/>
 </testsuite>
