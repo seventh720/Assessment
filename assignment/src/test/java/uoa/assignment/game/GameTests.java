@@ -405,7 +405,7 @@ public class GameTests
     /**
      * Task 4.1 
      */
-    /*@Test
+    @Test
     public void checkMoveIntoWall()
     {
           try {
@@ -449,12 +449,12 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 4.1" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     /**
      * Task 4.3 
      */
-    /*@Test
+    @Test
     public void checkMoveOfPlayers()
     {
      try {   
@@ -491,12 +491,12 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 4.3" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     /**
      * Task 4.4 
      */
-    /*@Test
+    @Test
     public void checkMoveToOccupiedField()
     {
      try {   
@@ -516,7 +516,7 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.    Check Task 4.4" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     
     /**

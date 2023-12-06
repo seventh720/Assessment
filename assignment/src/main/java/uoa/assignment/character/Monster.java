@@ -27,7 +27,10 @@ public class Monster extends GameCharacter {
 
 	
 	public String decideMove () {		
-		return "move";
-	}
-
+	    // Randomly decide the move direction
+        String[] directions = {"up", "down", "left", "right"};
+        Random random = new Random();
+        int randomIndex = random.nextInt(directions.length);
+        return directions[randomIndex];
+    }
 }
