@@ -17,11 +17,6 @@ public class GameLogic {
     public static void moveCharacter(String input, Map gameMap, GameCharacter character) {
         System.out.println(character.sayName() + " moving" + input);
 
-        Player player = (Player) gameMap.characters[0];
-        Monster monster1 = (Monster) gameMap.characters[1];
-        Monster monster2 = (Monster) gameMap.characters[2];
-        Monster monster3 = (Monster) gameMap.characters[3];
-
         // check print value
         switch (input.toLowerCase()) {
             case "up":
@@ -54,17 +49,11 @@ public class GameLogic {
         if (player.getRow() == monster.getRow() && player.getColumn() == monster.getColumn()) {
             // 玩家尝试攻击怪物
             System.out.println("Player is attacking " + monster.sayName());
-            if (!monster.successfulDefense()) {
-                // 攻击成功，降低怪物健康状态
-                System.out.println("!!HIT!! Player successfully attacked " + monster.sayName());
-                player.attack(monster);
-            } else {
-                // 怪物成功防御
-                System.out.println("!!MISS!! " + monster.sayName() + " successfully defended attack from Player");
+            player.hurtCharacter(monster);
+                
             }
         }
-        monster.getHealth();
-    }
+    
 
 
     private static void moveUp(GameCharacter character, Map gameMap) {

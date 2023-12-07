@@ -14,6 +14,9 @@ public class Player extends GameCharacter{
         if (!character.successfulDefense()) {
             int currentHealth = character.getHealth();
             character.setHealth(currentHealth - 50);
+            System.out.println("!!HIT!! Player successfully attacked " + character.sayName());
+        }else{
+            System.out.println("!!MISS!! " + character.sayName() + " successfully defended attack from " + this.sayName());
         }
         // Check if the character is a Monster and its health is now zero or below
         if (character instanceof Monster && character.getHealth() <= 0) {
@@ -32,12 +35,6 @@ public class Player extends GameCharacter{
 
     public String decideMove() {
         return "move";
-    }
-
-    public void attack(Monster monster) {
-        // 这里可以根据需要实现攻击逻辑
-        // 假设攻击成功，怪物减少 50 健康值
-        monster.setHealth(monster.getHealth() - 50);
     }
 
 }

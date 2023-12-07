@@ -7,6 +7,10 @@ import uoa.assignment.character.Player;
 public class Game {
     
     private Map map;
+    Player player;
+    Monster monster1;
+    Monster monster2;
+    Monster monster3;
 
     public Game(int mapHeight, int mapWidth) {
         // instantiate and initialize a Map object
@@ -14,6 +18,11 @@ public class Game {
 
         //  print the layout to the console
         map.printLayout();
+
+        player = (Player) gameMap.characters[0];
+        monster1 = (Monster) gameMap.characters[1];
+        monster2 = (Monster) gameMap.characters[2];
+        monster3 = (Monster) gameMap.characters[3];
     }
     			
     public Map getMap() {
@@ -47,6 +56,7 @@ public class Game {
         }
 
         System.out.println(input); // Player's move
+
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
             if (character.getHealth() > 0) {
