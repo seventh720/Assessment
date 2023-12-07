@@ -16,6 +16,12 @@ public class GameLogic {
 
     public static void moveCharacter(String input, Map gameMap, GameCharacter character) {
         System.out.println(character.sayName() + " moving" + input);
+
+        Player player = (Player) gameMap.characters[0];
+        Monster monster1 = (Monster) gameMap.characters[1];
+        Monster monster2 = (Monster) gameMap.characters[2];
+        Monster monster3 = (Monster) gameMap.characters[3];
+
         // check print value
         switch (input.toLowerCase()) {
             case "up":
@@ -34,7 +40,32 @@ public class GameLogic {
                 System.out.println("Use only keywords up, down, left, right");
                 break;
         }
+    
+
+    // Check if the player is attempting to move to a position with a monster
+        if (character instanceof Player) {
+            checkMonsterAttack(player, monster1);
+            checkMonsterAttack(player, monster2);
+            checkMonsterAttack(player, monster3);
+        }
     }
+        
+    private static void checkMonsterAttack(Player player, Monster monster) {
+        if (player.getRow() == monster.getRow() && player.getColumn() == monster.getColumn()) {
+            // 玩家尝试攻击怪物
+            System.out.println("Player is attacking " + monster.sayName());
+            if (!monster.successfulDefense()) {
+                // 攻击成功，降低怪物健康状态
+                System.out.println("!!HIT!! Player successfully attacked " + monster.sayName());
+                player.attack(monster);
+            } else {
+                // 怪物成功防御
+                System.out.println("!!MISS!! " + monster.sayName() + " successfully defended attack from Player");
+            }
+        }
+        monster.getHealth();
+    }
+
 
     private static void moveUp(GameCharacter character, Map gameMap) {
         int newRow = character.getRow() - 1;
@@ -86,7 +117,6 @@ public class GameLogic {
     }
 
     private static void updateCharacterPosition(GameCharacter character, Map gameMap, int newRow, int newColumn) {
-        // check whether new positions are in the map
         if (isValidPosition(newRow, newColumn, gameMap)) {
             if (gameMap.layout[newRow][newColumn].equals(".")) {
                 // clean old positions and set it to "."
@@ -95,14 +125,18 @@ public class GameLogic {
                 character.setRow(newRow);
                 character.setColumn(newColumn);
                 // update new positions in layout array
-                gameMap.layout[newRow][newColumn] = character instanceof Player ? "*" : "%";
+                gameMap.layout[newRow][newColumn] = character instanceof Player ? "*" : "%";                          
             } else if (character instanceof Monster) {
                 // monster cannot move to a position already occupied by another monster
-                System.out.println("Monster already there so can't move");
-            }
-        } else {
-            // if new positions are not in the map
-            System.out.println("Invalid move. Out of bounds.");
+                System.out.println("Monster already there so can't move");          
+        } 
+    } else {
+        // if new positions are not in the map
+        System.out.println("Invalid move. Out of bounds.");
         }
     }
+
 }
+
+
+

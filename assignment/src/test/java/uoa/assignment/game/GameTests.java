@@ -522,7 +522,7 @@ public class GameTests
     /**
      * Task 5.1 
      */
-    /*@Test
+    @Test
     public void checkHealthInformationPrinted()
     {
      try {   
@@ -546,12 +546,12 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. Are you printing the health information    Check Task 5.1" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     /**
      * Task 5.2
      */
-    /*@Test
+    @Test
     public void checkKillingMonster()
     {
      try {   
@@ -575,7 +575,7 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. It seems that it is not possible to kill a monster...   Check Task 5.2" + ANSI_RESET + e);
     }
-    }*/
+    }
     
      /**
      * Task 5.3

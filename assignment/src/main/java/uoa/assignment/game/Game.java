@@ -28,6 +28,7 @@ public class Game {
         // Print the layout after player's move
         map.printLayout();
 
+
         // Move all living monsters automatically
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
@@ -40,6 +41,11 @@ public class Game {
             }
         }
 
+         // Print the health status of each character
+        for (GameCharacter character : map.characters) {
+            System.out.println("Health " + character.sayName() + ": " + character.getHealth());
+        }
+
         System.out.println(input); // Player's move
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
@@ -47,7 +53,7 @@ public class Game {
                 System.out.println(character.sayName() + " is moving " + ((Monster) character).decideMove());
             }
         }
-        
+
         return true;
     }
    
