@@ -10,6 +10,13 @@ public class Player extends GameCharacter{
 
     @Override
     public void hurtCharacter(GameCharacter character) {
+        // Check if the character is a Monster and its health is now zero or below
+        if (character instanceof Monster && character.getHealth() <= 0) {
+            // Monster is defeated
+            System.out.println("Character already dead");
+            return;
+        }
+
         // Remove 50 health points if the monster did not defend successfully
         if (!character.successfulDefense()) {
             int currentHealth = character.getHealth();
@@ -18,12 +25,7 @@ public class Player extends GameCharacter{
         }else{
             System.out.println("!!MISS!! " + character.sayName() + " successfully defended attack from " + this.sayName());
         }
-        // Check if the character is a Monster and its health is now zero or below
-        if (character instanceof Monster && character.getHealth() <= 0) {
-            // Monster is defeated
-            System.out.println(character.sayName() + " has been defeated!");
-        }
-    }
+    }    
 
     @Override
     public boolean successfulDefense() {

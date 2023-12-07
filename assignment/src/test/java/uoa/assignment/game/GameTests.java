@@ -319,7 +319,7 @@ public class GameTests
         assertTrue(output.contains("Use only keywords up, down, left, right"));
             
     } catch (Exception | Error e) {
-        fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. moveCharacter method must print exactly this sentence when the use rinput is incorrect: 'Use only keywords up, down, left, right' Check Task 3.3"+ ANSI_RESET+ e);
+        fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. moveCharacter method must print exactly this sentence when the user input is incorrect: 'Use only keywords up, down, left, right' Check Task 3.3"+ ANSI_RESET+ e);
     }
       
     }
@@ -580,7 +580,7 @@ public class GameTests
      /**
      * Task 5.3
      */
-    /*@Test
+    @Test
     public void checkKillingPlayer()
     {
      try {   
@@ -605,14 +605,14 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. It seems that monster can't kill the player...   Check Task 5.3" + ANSI_RESET + e);
     }
-    }*/
+    }
     
    
     
     /**
      * Task 5.4
      */
-    /*@Test
+    @Test
     public void checkMarkingKilledMonster()
     {
      try {   
@@ -640,7 +640,7 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. It seems that it is not possible to kill a monster...   Check Task 5.2" + ANSI_RESET + e);
     }
-    }*/
+    }
     
      /**
      * Task 5.5

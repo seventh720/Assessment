@@ -4,10 +4,6 @@ import uoa.assignment.character.GameCharacter;
 import uoa.assignment.character.Monster;
 import uoa.assignment.character.Player;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Map {
 
     public String [][] layout;
@@ -68,23 +64,5 @@ public class Map {
         }
     }
 
-    public Monster getMonsterAt(int row, int column) {
-        for (GameCharacter character : characters) {
-            if (character instanceof Monster && character.getRow() == row && character.getColumn() == column) {
-                return (Monster) character;
-            }
-        }
-        return null;  // 如果找不到怪物，返回 null
-    }
-
-    public GameCharacter[] getCharacters() {
-        return characters;
-    }
-
-    public void removeCharacter(GameCharacter character) {
-        List<GameCharacter> updatedCharacters = new ArrayList<>(Arrays.asList(characters));
-        updatedCharacters.remove(character);
-        characters = updatedCharacters.toArray(new GameCharacter[0]);
-    }
 }
 

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: uoa.assignment.game.GameTests
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.104 s <<< FAILURE! - in uoa.assignment.game.GameTests
-checkKillingMonster(uoa.assignment.game.GameTests)  Time elapsed: 0.01 s  <<< FAILURE!
-java.lang.AssertionError: [47m[30mSomething is not right. It seems that it is not possible to kill a monster...   Check Task 5.2[0mjava.lang.AssertionError
-	at uoa.assignment.game.GameTests.checkKillingMonster(GameTests.java:576)
-
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.098 s - in uoa.assignment.game.GameTests

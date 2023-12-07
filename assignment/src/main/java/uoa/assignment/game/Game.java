@@ -7,10 +7,7 @@ import uoa.assignment.character.Player;
 public class Game {
     
     private Map map;
-    Player player;
-    Monster monster1;
-    Monster monster2;
-    Monster monster3;
+    private static boolean gameOver = false;
 
     public Game(int mapHeight, int mapWidth) {
         // instantiate and initialize a Map object
@@ -19,10 +16,6 @@ public class Game {
         //  print the layout to the console
         map.printLayout();
 
-        player = (Player) gameMap.characters[0];
-        monster1 = (Monster) gameMap.characters[1];
-        monster2 = (Monster) gameMap.characters[2];
-        monster3 = (Monster) gameMap.characters[3];
     }
     			
     public Map getMap() {
@@ -34,19 +27,12 @@ public class Game {
         Player player = (Player) map.characters[0];
         GameLogic.moveCharacter(input, map, player);
 
-        // Print the layout after player's move
-        map.printLayout();
-
-
         // Move all living monsters automatically
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
             if (character instanceof Monster && character.getHealth() > 0) {
                 String monsterMove = ((Monster) character).decideMove();
-                GameLogic.moveCharacter(monsterMove, map, character);
-
-                // Print the layout after monster's move
-                map.printLayout();
+                GameLogic.moveCharacter(monsterMove, map, character);               
             }
         }
 
@@ -55,8 +41,10 @@ public class Game {
             System.out.println("Health " + character.sayName() + ": " + character.getHealth());
         }
 
-        System.out.println(input); // Player's move
+        // Player's move
+        System.out.println("Player"+ " is moving " + input); 
 
+        // Monster's move
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
             if (character.getHealth() > 0) {
@@ -64,7 +52,39 @@ public class Game {
             }
         }
 
+        map.printLayout();
+
+
+    if (areAllMonstersDead()) {
+            System.out.println("YOU HAVE WON!");
+            gameOver = true;
+            System.exit(0);
+            return true;
+        }
+
+        // Check if the player has died
+        if (player.getHealth() <= 0) {
+            System.out.println("YOU HAVE DIED!");
+            gameOver = true;
+            System.exit(0);
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean areAllMonstersDead() {
+        for (int i = 1; i < map.characters.length; i++) {
+            GameCharacter character = map.characters[i];
+            if (character instanceof Monster && character.getHealth() > 0) {
+                return false;
+            }
+        }
         return true;
     }
-   
+
+    // Additional method to check if the game is over
+    public static boolean isGameOver() {
+        return gameOver;
+    }
 }

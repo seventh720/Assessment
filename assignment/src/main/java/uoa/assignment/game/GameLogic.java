@@ -9,13 +9,25 @@ import uoa.assignment.character.Monster;
 public class GameLogic {
 
     private Map gameMap;
+    Monster monster;
+    Player player;
 
     public GameLogic(Map gameMap) {
         this.gameMap = gameMap;
     }
 
     public static void moveCharacter(String input, Map gameMap, GameCharacter character) {
-        System.out.println(character.sayName() + " moving" + input);
+
+
+        // Check if the player is attempting to move to a position with a monster
+        if (character instanceof Player) {
+            checkPlayerAttack(input, (Player)character, (Monster)gameMap.characters[1], gameMap);
+            checkPlayerAttack(input, (Player)character, (Monster)gameMap.characters[2], gameMap);
+            checkPlayerAttack(input, (Player)character, (Monster)gameMap.characters[3], gameMap);
+        }
+        else if(character instanceof Monster) {
+            checkMonsterAttack(input,(Player)gameMap.characters[0], (Monster)character);
+        }
 
         // check print value
         switch (input.toLowerCase()) {
@@ -36,23 +48,56 @@ public class GameLogic {
                 break;
         }
     
-
-    // Check if the player is attempting to move to a position with a monster
-        if (character instanceof Player) {
-            checkMonsterAttack(player, monster1);
-            checkMonsterAttack(player, monster2);
-            checkMonsterAttack(player, monster3);
-        }
     }
         
-    private static void checkMonsterAttack(Player player, Monster monster) {
-        if (player.getRow() == monster.getRow() && player.getColumn() == monster.getColumn()) {
-            // 玩家尝试攻击怪物
+    private static void checkPlayerAttack(String input, Player player, Monster monster, Map gameMap) {
+        if (input.equals("up") && player.getRow() - 1 == monster.getRow() && player.getColumn() == monster.getColumn()) {
+            // player attempt to attack monster
             System.out.println("Player is attacking " + monster.sayName());
-            player.hurtCharacter(monster);
-                
+            player.hurtCharacter(monster);            
             }
-        }
+            else if(input.equals("down") && player.getRow() + 1 == monster.getRow() && player.getColumn() == monster.getColumn()){
+                System.out.println("Player is attacking " + monster.sayName());
+                player.hurtCharacter(monster);            
+                }
+            else if(input.equals("left") && player.getRow() == monster.getRow() && player.getColumn() - 1== monster.getColumn()){
+                System.out.println("Player is attacking " + monster.sayName());
+                player.hurtCharacter(monster);            
+                } 
+            else if(input.equals("right") && player.getRow() == monster.getRow() && player.getColumn() + 1 == monster.getColumn()){
+                System.out.println("Player is attacking " + monster.sayName());
+                player.hurtCharacter(monster);            
+                }
+        if (monster.getHealth() <= 0) {
+            // 更新地图上怪物的字符为 'x'
+            gameMap.layout[monster.getRow()][monster.getColumn()] = "x";
+            // 标记怪物为死亡状态
+            monster.setDead(true);
+        }        
+    }
+
+    private static void checkMonsterAttack(String input, Player player, Monster monster) {
+        if (input.equals("up") && monster.getRow() - 1 == player.getRow() && player.getColumn() == monster.getColumn()) {
+            // monster attempt to attack player
+            System.out.println(monster.sayName() + " is attacking player ");
+            monster.hurtCharacter(player);            
+            }
+            else if(input.equals("down") && monster.getRow() + 1 == player.getRow() && player.getColumn() == monster.getColumn()){
+                System.out.println(monster.sayName() + " is attacking player ");
+                monster.hurtCharacter(player);             
+                }
+            else if(input.equals("left") && player.getRow() == monster.getRow() && monster.getColumn() - 1== player.getColumn()){
+                System.out.println(monster.sayName() + " is attacking player ");
+                monster.hurtCharacter(player);             
+                } 
+            else if(input.equals("right") && player.getRow() == monster.getRow() && monster.getColumn() + 1 == player.getColumn()){
+                System.out.println(monster.sayName() + " is attacking player ");
+                monster.hurtCharacter(player);              
+                }
+            else if(monster.getRow() == monster.getRow() && monster.getColumn() == monster.getColumn()){
+                System.out.println("Monster already there so can't move");
+            }
+    }
     
 
 
@@ -115,10 +160,7 @@ public class GameLogic {
                 character.setColumn(newColumn);
                 // update new positions in layout array
                 gameMap.layout[newRow][newColumn] = character instanceof Player ? "*" : "%";                          
-            } else if (character instanceof Monster) {
-                // monster cannot move to a position already occupied by another monster
-                System.out.println("Monster already there so can't move");          
-        } 
+            } 
     } else {
         // if new positions are not in the map
         System.out.println("Invalid move. Out of bounds.");
@@ -126,6 +168,3 @@ public class GameLogic {
     }
 
 }
-
-
-

@@ -4,8 +4,11 @@ import java.util.Random;
 
 public class Monster extends GameCharacter {
 
+    private boolean isdead;
+
 	public  Monster(String name) {
 		super(name);
+        this.isdead = false;
 	}
 
 
@@ -14,12 +17,12 @@ public class Monster extends GameCharacter {
         if (!character.successfulDefense()) {
             int currentHealth = character.getHealth();
             character.setHealth(currentHealth - 20);
-            System.out.println("!!HIT!!" + this.sayName() " successfully attacked " + character.sayName());
+            System.out.println("!!HIT!!" + this.sayName() + " successfully attacked " + character.sayName());
         }else{
             System.out.println("!!MISS!! " + character.sayName() + " successfully defended attack from " + this.sayName());
         }        
-        }
-	}
+    }
+	
 
 	
 	public boolean successfulDefense() {
@@ -35,5 +38,13 @@ public class Monster extends GameCharacter {
         Random random = new Random();
         int randomIndex = random.nextInt(directions.length);
         return directions[randomIndex];
+    }
+    
+    public boolean isDead() {
+        return isdead;
+    }
+
+    public void setDead(boolean dead) {
+        isdead = dead;
     }
 }

@@ -28,7 +28,7 @@ public abstract class GameCharacter {
 	}
 
 	public void setHealth(int health) {
-		this.health =health;
+		this.health = health;
 	}
     
     public int getRow() {
