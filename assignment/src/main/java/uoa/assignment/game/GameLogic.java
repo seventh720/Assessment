@@ -1,7 +1,5 @@
 package uoa.assignment.game;
 
-import java.util.Scanner;
-
 import uoa.assignment.character.GameCharacter;
 import uoa.assignment.character.Player;
 import uoa.assignment.character.Monster;
@@ -69,9 +67,9 @@ public class GameLogic {
                 player.hurtCharacter(monster);            
                 }
         if (monster.getHealth() <= 0) {
-            // 更新地图上怪物的字符为 'x'
+            // update the string of monster to "x"
             gameMap.layout[monster.getRow()][monster.getColumn()] = "x";
-            // 标记怪物为死亡状态
+            // set monster.isdead = true
             monster.setDead(true);
         }        
     }
@@ -94,9 +92,6 @@ public class GameLogic {
                 System.out.println(monster.sayName() + " is attacking player ");
                 monster.hurtCharacter(player);              
                 }
-            else if(monster.getRow() == monster.getRow() && monster.getColumn() == monster.getColumn()){
-                System.out.println("Monster already there so can't move");
-            }
     }
     
 
@@ -160,7 +155,11 @@ public class GameLogic {
                 character.setColumn(newColumn);
                 // update new positions in layout array
                 gameMap.layout[newRow][newColumn] = character instanceof Player ? "*" : "%";                          
-            } 
+            } else if(character instanceof Monster){
+                if (gameMap.layout[newRow][newColumn].equals("%")){
+                System.out.println("Monster already there so can't move");   
+                }
+            }
     } else {
         // if new positions are not in the map
         System.out.println("Invalid move. Out of bounds.");

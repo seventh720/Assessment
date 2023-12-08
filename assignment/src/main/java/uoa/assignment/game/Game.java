@@ -58,7 +58,6 @@ public class Game {
     if (areAllMonstersDead()) {
             System.out.println("YOU HAVE WON!");
             gameOver = true;
-            System.exit(0);
             return true;
         }
 
@@ -66,7 +65,6 @@ public class Game {
         if (player.getHealth() <= 0) {
             System.out.println("YOU HAVE DIED!");
             gameOver = true;
-            System.exit(0);
             return true;
         }
 

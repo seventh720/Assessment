@@ -645,7 +645,7 @@ public class GameTests
      /**
      * Task 5.5
      */
-    /*@Test
+    @Test
     public void checkEndGame()
     {
      try {  
@@ -683,6 +683,6 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. It seems that it is not possible to win or lose the game.   Check Task 5.5" + ANSI_RESET + e);
     }
-    }*/
+    }
     
 }

@@ -291,7 +291,7 @@ public class CharacterTests
     /**
      * Task 4.2
      */
-    /*@Test
+    @Test
     public void checkIfMonsterDecidesRandomly()
     {
        
@@ -324,6 +324,6 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster contains a method decideMove() as per T4.2 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
 }
