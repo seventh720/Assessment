@@ -34,7 +34,6 @@ public class Player extends GameCharacter{
         return random.nextDouble() <= 0.3;
     }
 
-
     public String decideMove() {
         return "move";
     }

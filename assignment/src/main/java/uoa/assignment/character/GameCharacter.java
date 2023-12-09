@@ -9,7 +9,6 @@ public abstract class GameCharacter {
 	public int row;
 	public int column;
 	
-	
 	public GameCharacter (String name) {
 		this.name = name;
 	}
@@ -17,8 +16,7 @@ public abstract class GameCharacter {
 	public abstract void hurtCharacter (GameCharacter character);
 	
 	public abstract boolean successfulDefense ();
-	
-	
+		
 	public String sayName() {
         return name;
 	}

@@ -7,8 +7,6 @@ import uoa.assignment.character.Monster;
 public class GameLogic {
 
     private Map gameMap;
-    Monster monster;
-    Player player;
 
     public GameLogic(Map gameMap) {
         this.gameMap = gameMap;
@@ -94,8 +92,6 @@ public class GameLogic {
                 }
     }
     
-
-
     private static void moveUp(GameCharacter character, Map gameMap) {
         int newRow = character.getRow() - 1;
         int newColumn = character.getColumn();
@@ -165,5 +161,4 @@ public class GameLogic {
         System.out.println("Invalid move. Out of bounds.");
         }
     }
-
 }

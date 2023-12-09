@@ -23,12 +23,12 @@ public class RunGame {
 			// print the number of the round
             System.out.println("Round " + round);
 
-			System.out.print("Enter something (or a condition to end the game): ");
+			System.out.print("Enter a direction which you want player to move(or enter exit to end the game ): ");
             String userInput = scanner.nextLine();
             game.nextRound(userInput);
 
             // check whether the game is over 
-            if ("end".equals(userInput)) {
+            if ("exit".equals(userInput)) {
                 gameOver = true;
             }
 

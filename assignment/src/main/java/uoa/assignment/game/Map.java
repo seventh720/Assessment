@@ -19,13 +19,12 @@ public class Map {
         //initialize the array
         initialiseArray();   
     
-    
         // create an instance of player and place it in specific position
         Player player = new Player("Player");
         player.row = height - 1;
         player.column = width - 1;
         characters[0] = player;
-         layout[player.row][player.column] = "*";
+        layout[player.row][player.column] = "*";
 
         // create three instances of monster and place them in specific positions
         Monster monster1 = new Monster("Monster1");

@@ -11,7 +11,6 @@ public class Monster extends GameCharacter {
         this.isdead = false;
 	}
 
-
 	public void hurtCharacter(GameCharacter character) {
 		// Remove 20 health points if the player did not defend successfully
         if (!character.successfulDefense()) {
@@ -23,15 +22,12 @@ public class Monster extends GameCharacter {
         }        
     }
 	
-
-	
 	public boolean successfulDefense() {
 		// Randomly decide whether the monster can defend successfully
         Random random = new Random();
         return random.nextBoolean();
 	}
 
-	
 	public String decideMove () {		
 	    // Randomly decide the move direction
         String[] directions = {"up", "down", "left", "right"};
