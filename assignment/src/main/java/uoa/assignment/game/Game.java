@@ -27,11 +27,15 @@ public class Game {
         Player player = (Player) map.characters[0];
         GameLogic.moveCharacter(input, map, player);
 
-        // Move all living monsters automatically
+        // Player's move
+        System.out.println("Player"+ " is moving " + input); 
+
+        // Move all living monsters automatically and Monster's move
         for (int i = 1; i < map.characters.length; i++) {
             GameCharacter character = map.characters[i];
             if (character instanceof Monster && character.getHealth() > 0) {
                 String monsterMove = ((Monster) character).decideMove();
+                System.out.println(character.sayName() + " is moving " + monsterMove);    
                 GameLogic.moveCharacter(monsterMove, map, character);               
             }
         }
@@ -39,19 +43,7 @@ public class Game {
          // Print the health status of each character
         for (GameCharacter character : map.characters) {
             System.out.println("Health " + character.sayName() + ": " + character.getHealth());
-        }
-
-        // Player's move
-        System.out.println("Player"+ " is moving " + input); 
-
-        // Monster's move
-        for (int i = 1; i < map.characters.length; i++) {
-            GameCharacter character = map.characters[i];
-            if (character.getHealth() > 0) {
-                System.out.println(character.sayName() + " is moving " + ((Monster) character).decideMove());
-            }
-        }
-
+        }  
         map.printLayout();
 
 
